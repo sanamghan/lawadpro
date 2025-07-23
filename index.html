@@ -676,49 +676,98 @@
         }
 
         @media (max-width: 768px) {
+            .hero {
+                min-height: 100vh;
+                padding: 80px 0 40px;
+            }
+
             .hero::before {
                 left: -100px;
                 width: 80%;
-                opacity: 0.1;
+                opacity: 0.08;
             }
 
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
                 text-align: center;
-                padding: 20px 0;
+                padding: 0;
             }
 
-            .hero-text h1 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-                margin-bottom: 20px;
-            }
-
-            .hero-features {
-                margin: 30px 0;
-            }
-
-            .hero-features li {
-                font-size: 1rem;
-                margin-bottom: 12px;
+            .hero-text {
+                order: 1;
             }
 
             .lead-form {
-                padding: 30px 20px;
-                margin-top: 20px;
+                order: 2;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+                margin-bottom: 20px;
+                padding: 0 10px;
+            }
+
+            .hero-features {
+                margin: 20px 0;
+                padding: 0 10px;
+            }
+
+            .hero-features li {
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+                padding-left: 25px;
+            }
+
+            .hero-features li::before {
+                width: 16px;
+                height: 16px;
+            }
+
+            .hero-features li::after {
+                left: 4px;
+                font-size: 0.8rem;
+            }
+
+            .lead-form {
+                padding: 25px 15px;
+                margin: 20px 10px 0;
             }
 
             .lead-form h3 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+                margin-bottom: 8px;
+            }
+
+            .lead-form p {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                padding: 15px;
+                font-size: 1rem;
             }
 
             .nav {
-                padding: 15px 0;
+                padding: 12px 0;
             }
 
             .logo {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
             }
 
             .floating-shape {
@@ -732,6 +781,7 @@
 
             .case-results {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .footer-contact {
@@ -740,16 +790,27 @@
             }
 
             .section-header h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
+                padding: 0 20px;
             }
 
             .cta-content h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
+                padding: 0 20px;
             }
 
             .facts-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 25px;
+                padding: 0 20px;
+            }
+
+            .fact-card {
+                padding: 40px 20px;
+            }
+
+            .container {
+                padding: 0 15px;
             }
         }
     </style>
