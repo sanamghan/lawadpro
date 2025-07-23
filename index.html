@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LawAdPro - Employment Law Marketing Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --kelly-green: #0b7d46;
+            --dark-green: #085a33;
+            --ivory: #FFFFF0;
+            --black: #1a1a1a;
+            --light-gray: #f8f8f8;
+            --medium-gray: #666;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background: var(--ivory);
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .floating-shape {
+            position: absolute;
+            animation: float 8s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-shape:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 8rem;
+            animation-delay: 0s;
+        }
+
+        .floating-shape:nth-child(1)::before { content: '⚖️'; }
+
+        .floating-shape:nth-child(2) {
+            top: 25%;
+            right: 15%;
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 8rem;
+            animation-delay: 2s;
+        }
+
+        .floating-shape:nth-child(2)::before { content: '⚖️'; }
+
+        .floating-shape:nth-child(3) {
+            top: 65%;
+            left: 8%;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation-delay: 4s;
+            transform: rotate(45deg);
+        }
+
+        .floating-shape:nth-child(4) {
+            top: 75%;
+            right: 10%;
+            width: 180px;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation-delay: 1s;
+        }
+
+        .floating-shape:nth-child(5) {
+            top: 45%;
+            left: 20%;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation-delay: 3s;
+        }
+
+        .floating-shape:nth-child(6) {
+            top: 85%;
+            right: 25%;
+            width: 160px;
+            height: 160px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation-delay: 5s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(-10deg); 
+                opacity: 0.7;
+            }
+            50% { 
+                transform: translateY(-50px) rotate(10deg); 
+                opacity: 1;
+            }
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--kelly-green) 0%, var(--dark-green) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -200px;
+            width: 60%;
+            height: 100%;
+            background: url('https://i.imgur.com/YkxaBWM.jpeg') no-repeat center left;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 240, 0.1) 100%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-features {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .hero-features li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            background: var(--ivory);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-features li::after {
+            content: '✓';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            color: var(--kelly-green);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .lead-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .lead-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--kelly-green), var(--dark-green));
+            border-radius: 20px 20px 0 0;
+        }
+
+        .lead-form h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .lead-form p {
+            color: var(--medium-gray);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--kelly-green);
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--kelly-green);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+        }
+
+        .facts-section {
+            padding: 80px 0;
+            background: var(--ivory);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .fact-card {
+            text-align: center;
+            padding: 50px 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--kelly-green), var(--dark-green));
+        }
+
+        .fact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .fact-icon {
+            font-size: 3rem;
+            color: var(--kelly-green);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .fact-icon.trophy::before { content: '🏆'; }
+        .fact-icon.users::before { content: '👥'; }
+        .fact-icon.chart::before { content: '📊'; }
+
+        .fact-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--kelly-green);
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .fact-label {
+            font-size: 1.1rem;
+            color: var(--black);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .fact-description {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+        }
+
+        .case-study-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .case-study-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .case-study-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .case-study-text p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+        }
+
+        .case-results {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .result-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--kelly-green);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .result-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--kelly-green);
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            font-weight: 500;
+        }
+
+        .case-study-image {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, var(--kelly-green) 0%, var(--dark-green) 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .case-study-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .case-study-icon::before { content: '📊'; }
+
+        .case-study-image::before {
+            content: 'Case Study Visual';
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            background: var(--black);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-subtext {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--kelly-green);
+            color: white;
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cta-btn:hover {
+            background: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(34, 139, 34, 0.4);
+        }
+
+        .footer {
+            background: var(--ivory);
+            padding: 80px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--kelly-green) 50%, transparent 100%);
+        }
+
+        .footer-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--kelly-green), var(--dark-green));
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(11, 125, 70, 0.3);
+            background-image: url('https://i.imgur.com/JT7Ld1N.jpeg');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .footer-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-content p {
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(11, 125, 70, 0.1);
+        }
+
+        .contact-item:hover {
+            color: var(--kelly-green);
+            background: rgba(11, 125, 70, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--kelly-green);
+            width: 20px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .contact-icon.email::before { content: '✉️'; }
+        .contact-icon.phone::before { content: '📞'; }
+        .contact-icon.calendar::before { content: '📅'; }
+
+        .footer-bottom {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 30px;
+            color: var(--medium-gray);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .case-study-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .case-results {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="floating-elements">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+        
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">Law Ad Pro</div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Powering Your Client Pipeline</h1>
+                    <ul class="hero-features">
+                        <li>Mastering Google Ads for 9+ years</li>
+                        <li>Generated thousands of high-value leads</li>
+                        <li>Secured multi-six-figure case settlements</li>
+                        <li>Capitalizing on the latest ad enhancements</li>
+                    </ul>
+                </div>
+                
+                <div class="lead-form">
+                    <h3>Ready to Scale Your Practice?</h3>
+                    <p>Get your free consultation and custom strategy</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Monthly Ad Spend</option>
+                                <option value="none">No Current Spend</option>
+                                <option value="10k">Up to $10K</option>
+                                <option value="50k">Up to $50K</option>
+                                <option value="100k">Up to $100K</option>
+                                <option value="100k+">$100K+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="What's your biggest challenge with client acquisition?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="facts-section">
+        <div class="container">
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="fact-icon trophy"></div>
+                    <div class="fact-number">State Exclusivity</div>
+                    <div class="fact-description">Your state. Your clients. No internal bidding wars.</div>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-icon users"></div>
+                    <div class="fact-number">Tailored Reporting</div>
+                    <div class="fact-description">Custom dashboards built to keep you in control.</div>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-icon chart"></div>
+                    <div class="fact-number">Work With An Expert</div>
+                    <div class="fact-description">Your account deserves experience—not trial and error.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-study-section">
+        <div class="container">
+            <div class="case-study-content">
+                <div class="case-study-text">
+                    <h2>How We Helped Martinez & Associates Scale From $2M to $8M</h2>
+                    <p>A mid-sized employment law firm in California was struggling with inconsistent lead flow and low-quality cases. They were spending $15K monthly on various marketing channels with minimal results.</p>
+                    
+                    <p>Our strategic approach focused on high-intent employment law keywords, compelling ad copy that attracted serious cases, and landing pages optimized for conversion. Within 6 months, they saw dramatic improvements.</p>
+                    
+                    <div class="case-results">
+                        <div class="result-item">
+                            <div class="result-number">340%</div>
+                            <div class="result-label">Lead Quality Increase</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">$6M</div>
+                            <div class="result-label">Additional Revenue</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">67%</div>
+                            <div class="result-label">Cost Per Lead Reduction</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">12</div>
+                            <div class="result-label">New Attorneys Hired</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-study-image">
+                    <div class="case-study-icon"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Practice?</h2>
+                <p>Join the employment law firms who've already discovered the power of strategic Google Ads. Your next high-value case is just one click away.</p>
+                <a href="#" class="cta-btn">Contact</a>
+                <div class="cta-subtext">Response guaranteed within 1 business day</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-image"></div>
+            
+            <div class="footer-content">
+                <h3>Let's Grow Your Practice Together</h3>
+                <p>Ready to transform your legal marketing strategy? Let's discuss how we can drive high-value employment law cases to your firm.</p>
+                
+                <div class="footer-contact">
+                    <a href="mailto:hello@lawadpro.com" class="contact-item">
+                        <span class="contact-icon email"></span>
+                        hello@lawadpro.com
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LawAdPro. All rights reserved. | Specializing in Employment Law Marketing</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We\'ll contact you within 24 hours to schedule your free strategy session.');
+        });
+
+        document.querySelector('.cta-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.lead-form').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    </script>
+</body>
+</html>
