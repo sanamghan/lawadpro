@@ -682,41 +682,46 @@
             }
 
             .hero::before {
-                left: -100px;
-                width: 80%;
-                opacity: 0.08;
+                left: -50px;
+                width: 70%;
+                opacity: 0.2;
             }
 
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 60px;
                 text-align: center;
                 padding: 0;
             }
 
             .hero-text {
                 order: 1;
+                min-height: calc(100vh - 160px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
 
             .lead-form {
                 order: 2;
+                margin-top: 40px;
             }
 
             .hero-text h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
                 line-height: 1.2;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
                 padding: 0 10px;
             }
 
             .hero-features {
-                margin: 20px 0;
+                margin: 30px 0;
                 padding: 0 10px;
             }
 
             .hero-features li {
-                font-size: 0.95rem;
-                margin-bottom: 10px;
+                font-size: 1rem;
+                margin-bottom: 15px;
                 padding-left: 25px;
             }
 
@@ -774,6 +779,30 @@
                 display: none;
             }
 
+            .facts-section {
+                padding: 60px 0;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 20px;
+            }
+
+            .fact-card {
+                padding: 30px 20px;
+            }
+
+            .fact-number {
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+            }
+
+            .fact-icon {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
             .case-study-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -787,6 +816,11 @@
             .footer-contact {
                 flex-direction: column;
                 gap: 20px;
+                align-items: center;
+            }
+
+            .contact-item {
+                justify-content: center;
             }
 
             .section-header h2 {
@@ -797,16 +831,6 @@
             .cta-content h2 {
                 font-size: 2rem;
                 padding: 0 20px;
-            }
-
-            .facts-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-                padding: 0 20px;
-            }
-
-            .fact-card {
-                padding: 40px 20px;
             }
 
             .container {
