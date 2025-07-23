@@ -676,14 +676,53 @@
         }
 
         @media (max-width: 768px) {
+            .hero::before {
+                left: -100px;
+                width: 80%;
+                opacity: 0.1;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
                 text-align: center;
+                padding: 20px 0;
             }
 
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 20px;
+            }
+
+            .hero-features {
+                margin: 30px 0;
+            }
+
+            .hero-features li {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+
+            .lead-form {
+                padding: 30px 20px;
+                margin-top: 20px;
+            }
+
+            .lead-form h3 {
+                font-size: 1.5rem;
+            }
+
+            .nav {
+                padding: 15px 0;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .floating-shape {
+                display: none;
             }
 
             .case-study-content {
@@ -706,6 +745,11 @@
 
             .cta-content h2 {
                 font-size: 2.2rem;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
     </style>
