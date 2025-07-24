@@ -682,11 +682,16 @@
             }
 
             .hero::before {
-                left: -200px;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100px;
                 width: 60%;
-                background-position: center left;
+                height: 100%;
+                background: url('https://i.imgur.com/YkxaBWM.jpeg') no-repeat center left;
                 background-size: cover;
                 opacity: 0.15;
+                z-index: 1;
             }
 
             .hero-content {
